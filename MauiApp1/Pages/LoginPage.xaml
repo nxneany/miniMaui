@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.LoginPage"
+             Title="Login"
+             BackgroundColor="#F0F0F0">
+
+       <!-- ใช้ AbsoluteLayout เพื่อวางภาพพื้นหลัง -->
+       <AbsoluteLayout>
+              <!-- รูปพื้นหลัง -->
+              <Image Source="share.jpg"
+                     Aspect="AspectFill"
+                     AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                     AbsoluteLayout.LayoutFlags="All"/>
+
+              <!-- การ์ด -->
+              <VerticalStackLayout Padding="30"
+                                   VerticalOptions="Center"
+                                   AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                                   AbsoluteLayout.LayoutFlags="All">
+
+                     <!-- โลโก้ -->
+                     <Border StrokeThickness="0"
+                             Background="Transparent"
+                             WidthRequest="200"
+                             HeightRequest="100"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Start">
+                            <Image Source="tum.png"
+                                   WidthRequest="200"
+                                   HeightRequest="100"/>
+                     </Border>
+
+                     <!-- เว้นระยะห่างระหว่างโลโก้กับการ์ด -->
+                     <BoxView HeightRequest="10"
+                              Color="Transparent"/>
+
+                     <!-- การ์ดครอบฟอร์ม (ทำให้มัวจาง) -->
+                     <Border
+                            Background="White"
+                            Padding="20"
+                            Margin="10"
+                            StrokeShape="RoundRectangle 10"
+                            WidthRequest="400"
+                            HorizontalOptions="Center"
+                            Opacity="0.95">
+                            <!-- ปรับ Opacity -->
+                            <VerticalStackLayout Spacing="15">
+
+                                   <Label Text="Email"
+                                          FontSize="18"/>
+                                   <Entry x:Name="emailEntry"
+                                          Placeholder="Enter Email"
+                                          Keyboard="Email"
+                                          TextColor="Black"/>
+
+                                   <Label Text="Password"
+                                          FontSize="18"/>
+                                   <Entry x:Name="passwordEntry"
+                                          Placeholder="Enter Password"
+                                          IsPassword="True"
+                                          TextColor="Black"/>
+
+                                   <Button Text="Login"
+                                           Clicked="OnLoginClicked"
+                                           BackgroundColor="#FF01575A"
+                                           TextColor="White"
+                                           CornerRadius="8"
+                                           HeightRequest="50"/>
+                            </VerticalStackLayout>
+                     </Border>
+
+              </VerticalStackLayout>
+       </AbsoluteLayout>
+
+</ContentPage>
