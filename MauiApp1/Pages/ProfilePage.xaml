@@ -1,33 +1,62 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="MauiApp1.Pages.ProfilePage">
+             x:Class="MauiApp1.Pages.ProfilePage"
+             BackgroundColor="#F5F5F5">
 
-       <StackLayout Padding="20">
+       <StackLayout Padding="20"
+                    Spacing="20">
+
+              <!-- Title -->
               <Label Text="Profile"
-                     FontSize="30"
+                     FontSize="32"
+                     FontAttributes="Bold"
                      HorizontalOptions="Center"
-                     TextColor="Black"/>
+                     TextColor="#333333"
+                     Padding="10"/>
 
+              <!-- Name -->
               <Label Text="{Binding Name}"
                      FontSize="24"
-                     TextColor="Black"/>
+                     FontAttributes="Italic"
+                     HorizontalOptions="Center"
+                     TextColor="#333333"/>
 
+              <!-- Major -->
               <Label Text="{Binding Major}"
                      FontSize="18"
+                     HorizontalOptions="Center"
                      TextColor="Gray"/>
 
+              <!-- Courses Section Title -->
               <Label Text="Courses"
-                     FontSize="22"
-                     TextColor="Black"/>
+                     FontSize="24"
+                     FontAttributes="Bold"
+                     HorizontalOptions="Start"
+                     TextColor="#333333"
+                     Padding="5,0"/>
 
-              <ListView ItemsSource="{Binding Courses}">
+              <!-- ListView -->
+              <ListView ItemsSource="{Binding Courses}"
+                        SeparatorColor="#DDDDDD"
+                        HasUnevenRows="True">
                      <ListView.ItemTemplate>
                             <DataTemplate>
                                    <TextCell Text="{Binding CourseName}"
-                                             Detail="{Binding Status}"/>
+                                             Detail="{Binding Status}"
+                                             TextColor="#333333"
+                                             DetailColor="Gray"/>
                             </DataTemplate>
                      </ListView.ItemTemplate>
               </ListView>
+
+              <!-- Register Button -->
+              <Button Text="Register for Courses"
+                      FontSize="18"
+                      BackgroundColor="#4CAF50"
+                      TextColor="White"
+                      Padding="10"
+                      HorizontalOptions="Center"
+                      Clicked="OnRegisterButtonClicked"/>
        </StackLayout>
 </ContentPage>

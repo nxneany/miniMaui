@@ -25,9 +25,9 @@ namespace MauiApp1.Pages
 				Major = "วิทยาการคอมพิวเตอร์",
 				Courses = new[]
 				{
-					new { CourseId = "CS101", CourseName = "Programming Basics", Credits = 3, Status = "Enrolled" },
-					new { CourseId = "CS202", CourseName = "Data Structures", Credits = 3, Status = "Completed" }
-				}
+			new { CourseId = "CS101", CourseName = "Programming Basics", Credits = 3, Status = "Enrolled" },
+			new { CourseId = "CS202", CourseName = "Data Structures", Credits = 3, Status = "Completed" }
+		}
 			};
 
 			// ตรวจสอบข้อมูลการเข้าสู่ระบบ
@@ -45,5 +45,6 @@ namespace MauiApp1.Pages
 				await DisplayAlert("Error", "Invalid email or password.", "OK");
 			}
 		}
+
 	}
 }

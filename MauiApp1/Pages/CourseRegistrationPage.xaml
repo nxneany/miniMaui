@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:viewModels="clr-namespace:MauiApp1.ViewModels"
-             x:Class="MauiApp1.CourseRegistrationPage">
+             x:Class="MauiApp1.Pages.CourseRegistrationPage">
     <ContentPage.BindingContext>
         <viewModels:CourseRegistrationViewModel/>
     </ContentPage.BindingContext>
