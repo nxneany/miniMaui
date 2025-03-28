@@ -16,7 +16,7 @@
                     <ViewCell>
                         <StackLayout>
                             <Label Text="{Binding CourseName}"/>
-                            <Button Text="Register"
+                            <Button Text="ลงทะเบียน"
                                     Command="{Binding BindingContext.RegisterCourseCommand, Source={x:Reference Name=courseRegistrationPage}}"
                                     CommandParameter="{Binding .}"/>
                         </StackLayout>

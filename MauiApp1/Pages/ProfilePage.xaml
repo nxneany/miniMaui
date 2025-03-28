@@ -51,9 +51,9 @@
               </ListView>
 
               <!-- Register Button -->
-              <Button Text="Register for Courses"
+              <Button Text="ลงทะเบียนเรียน"
                       FontSize="18"
-                      BackgroundColor="#4CAF50"
+                      BackgroundColor="#FF40B844"
                       TextColor="White"
                       Padding="10"
                       HorizontalOptions="Center"
