@@ -1,17 +1,15 @@
-﻿using MauiApp1.Pages; // นำเข้า LoginPage
+﻿using MauiApp1.Pages;
+using Microsoft.Maui.Controls;
 
-namespace MauiApp1;
-
-public partial class App : Application
+namespace MauiApp1
 {
-	public App()
+	public partial class App : Application
 	{
-		InitializeComponent();
-	}
+		public App()
+		{
+			InitializeComponent();
 
-	protected override Window CreateWindow(IActivationState? activationState)
-	{
-		return new Window(new LoginPage()); // ให้แสดงหน้า Login ก่อน
+			MainPage = new NavigationPage(new LoginPage()); // ตั้งค่าเริ่มต้นเป็นหน้า LoginPage
+		}
 	}
-
 }

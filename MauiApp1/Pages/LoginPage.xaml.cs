@@ -1,43 +1,44 @@
-using System;
+using MauiApp1.Models;
+using MauiApp1.ViewModels;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Devices;  // เพิ่ม namespace สำหรับการใช้งาน DeviceInfo
 
 namespace MauiApp1.Pages
 {
 	public partial class LoginPage : ContentPage
 	{
+		private LoginViewModel _viewModel;
+
 		public LoginPage()
 		{
 			InitializeComponent();
+			_viewModel = new LoginViewModel();
+			BindingContext = _viewModel; // ตั้งค่า BindingContext ให้กับหน้า
 		}
 
+		// ฟังก์ชันเมื่อคลิกปุ่ม Login
 		private async void OnLoginClicked(object sender, EventArgs e)
 		{
-			string email = emailEntry.Text;
-			string password = passwordEntry.Text;
+			// ตรวจสอบการล็อกอินแบบ Asynchronous
+			bool isValidLogin = await _viewModel.ValidateLoginAsync();
 
-			// ตรวจสอบว่าแอปทำงานบน Windows (WinUI)
-			if (DeviceInfo.Platform == DevicePlatform.WinUI)
+			if (isValidLogin)
 			{
-				// สามารถใช้ฟังก์ชันหรือ API ที่เฉพาะสำหรับ Windows (WinUI) ที่นี่
-				Console.WriteLine("กำลังทำงานบน Windows (WinUI)");
-			}
+				// ถ้าล็อกอินสำเร็จ
+				UserModel loggedInUser = new UserModel
+				{
+					Email = _viewModel.Email,  // กำหนดข้อมูลผู้ใช้ที่ล็อกอิน
+											   // คุณสามารถเพิ่มข้อมูลอื่นๆ ที่ต้องการจาก ViewModel ที่นี่
+				};
 
-			if (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password))
-			{
-				// จำลองการเข้าสู่ระบบ (ไม่มีฐานข้อมูลจริง)
-				if (email == "test@student.com" && password == "1234")
-				{
-					await Navigation.PushModalAsync(new ProfilePage());
-				}
-				else
-				{
-					await DisplayAlert("Login Failed", "Invalid email or password", "OK");
-				}
+				await DisplayAlert("Login Successful", "Welcome!", "OK");
+
+				// ไปยังหน้า Profile และส่งข้อมูลผู้ใช้ที่ล็อกอิน
+				await Navigation.PushModalAsync(new ProfilePage(loggedInUser)); // ส่งข้อมูลผู้ใช้ไปที่หน้า Profile
 			}
 			else
 			{
-				await DisplayAlert("Error", "Please enter both email and password", "OK");
+				// ถ้าล็อกอินล้มเหลว
+				await DisplayAlert("Login Failed", "Invalid email or password", "OK");
 			}
 		}
 	}

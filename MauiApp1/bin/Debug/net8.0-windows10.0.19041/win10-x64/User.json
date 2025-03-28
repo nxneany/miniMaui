@@ -1,0 +1,46 @@
+[
+    {
+        "sid": "65011212241",
+        "name": "อนัญญา กรโสภา",
+        "email": "nune@gmail.com",
+        "password": "1234",
+        "year": 3,
+        "major": "วิทยาการคอมพิวเตอร์",
+        "courses": [
+            {
+                "course_id": "CS101",
+                "course_name": "Programming Basics",
+                "credits": 3,
+                "status": "Enrolled"
+            },
+            {
+                "course_id": "CS202",
+                "course_name": "Data Structures",
+                "credits": 3,
+                "status": "Completed"
+            }
+        ]
+    },
+    {
+        "sid": "65011212242",
+        "name": "สมชาย ใจดี",
+        "email": "nn1@gmail.com",
+        "password": "1111",
+        "year": 2,
+        "major": "เทคโนโลยีสารสนเทศ",
+        "courses": [
+            {
+                "course_id": "IT101",
+                "course_name": "Introduction to IT",
+                "credits": 3,
+                "status": "Enrolled"
+            },
+            {
+                "course_id": "IT201",
+                "course_name": "Networking Basics",
+                "credits": 3,
+                "status": "Enrolled"
+            }
+        ]
+    }
+]

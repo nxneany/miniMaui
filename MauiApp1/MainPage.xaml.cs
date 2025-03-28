@@ -1,24 +1,20 @@
-﻿namespace MauiApp1;
+﻿using Microsoft.Maui.Controls;
 
-public partial class MainPage : ContentPage
+namespace MauiApp1
 {
-	int count = 0;
-
-	public MainPage()
+	public partial class MainPage : ContentPage
 	{
-		InitializeComponent();
-	}
+		public MainPage()
+		{
+			InitializeComponent();
+		}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		// ฟังก์ชันที่เรียกใช้เมื่อปุ่มถูกคลิก
+		private void OnCounterClicked(object sender, EventArgs e)
+		{
+			// เพิ่มโค้ดที่ต้องการทำเมื่อคลิกปุ่ม
+			// ตัวอย่างเช่นเพิ่มข้อความ
+			DisplayAlert("Button Clicked", "You clicked the button!", "OK");
+		}
 	}
 }
-
