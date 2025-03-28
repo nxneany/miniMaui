@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.Pages.ProfilePage"
-             Title="Profile">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MauiApp1.Pages.ProfilePage">
 
-       <VerticalStackLayout Padding="20">
-              <!-- แสดงข้อมูลชื่อผู้ใช้ -->
-              <Label Text="{Binding User.Name}"
+       <StackLayout Padding="20">
+              <Label Text="Profile"
+                     FontSize="30"
+                     HorizontalOptions="Center"
+                     TextColor="Black"/>
+
+              <Label Text="{Binding Name}"
                      FontSize="24"
-                     HorizontalOptions="Center"/>
+                     TextColor="Black"/>
 
-              <Label Text="{Binding User.Email}"
+              <Label Text="{Binding Major}"
                      FontSize="18"
-                     HorizontalOptions="Center"/>
+                     TextColor="Gray"/>
 
-              <!-- เพิ่มส่วนอื่นๆ ของโปรไฟล์ -->
-              <Label Text="Year: {Binding User.Year}"
-                     FontSize="18"/>
-              <Label Text="Major: {Binding User.Major}"
-                     FontSize="18"/>
-       </VerticalStackLayout>
+              <Label Text="Courses"
+                     FontSize="22"
+                     TextColor="Black"/>
+
+              <ListView ItemsSource="{Binding Courses}">
+                     <ListView.ItemTemplate>
+                            <DataTemplate>
+                                   <TextCell Text="{Binding CourseName}"
+                                             Detail="{Binding Status}"/>
+                            </DataTemplate>
+                     </ListView.ItemTemplate>
+              </ListView>
+       </StackLayout>
 </ContentPage>

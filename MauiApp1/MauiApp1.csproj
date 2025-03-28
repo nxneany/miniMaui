@@ -87,5 +87,9 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
+	<!-- <ItemGroup>
+		<MauiXaml Include="LoginPage.xaml" />
+	</ItemGroup> -->
+
 
 </Project>

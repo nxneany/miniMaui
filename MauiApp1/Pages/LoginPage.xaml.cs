@@ -1,44 +1,48 @@
-using MauiApp1.Models;
-using MauiApp1.ViewModels;
 using Microsoft.Maui.Controls;
 
 namespace MauiApp1.Pages
 {
 	public partial class LoginPage : ContentPage
 	{
-		private LoginViewModel _viewModel;
-
 		public LoginPage()
 		{
 			InitializeComponent();
-			_viewModel = new LoginViewModel();
-			BindingContext = _viewModel; // ตั้งค่า BindingContext ให้กับหน้า
 		}
 
-		// ฟังก์ชันเมื่อคลิกปุ่ม Login
 		private async void OnLoginClicked(object sender, EventArgs e)
 		{
-			// ตรวจสอบการล็อกอินแบบ Asynchronous
-			bool isValidLogin = await _viewModel.ValidateLoginAsync();
+			var email = EmailEntry.Text;
+			var password = PasswordEntry.Text;
 
-			if (isValidLogin)
+			// ข้อมูลจำลองผู้ใช้
+			var user = new
 			{
-				// ถ้าล็อกอินสำเร็จ
-				UserModel loggedInUser = new UserModel
+				Sid = "65011212241",
+				Name = "อนัญญา กรโสภา",
+				Email = "nune@gmail.com",
+				Password = "1234",
+				Year = 3,
+				Major = "วิทยาการคอมพิวเตอร์",
+				Courses = new[]
 				{
-					Email = _viewModel.Email,  // กำหนดข้อมูลผู้ใช้ที่ล็อกอิน
-											   // คุณสามารถเพิ่มข้อมูลอื่นๆ ที่ต้องการจาก ViewModel ที่นี่
-				};
+					new { CourseId = "CS101", CourseName = "Programming Basics", Credits = 3, Status = "Enrolled" },
+					new { CourseId = "CS202", CourseName = "Data Structures", Credits = 3, Status = "Completed" }
+				}
+			};
 
-				await DisplayAlert("Login Successful", "Welcome!", "OK");
-
-				// ไปยังหน้า Profile และส่งข้อมูลผู้ใช้ที่ล็อกอิน
-				await Navigation.PushModalAsync(new ProfilePage(loggedInUser)); // ส่งข้อมูลผู้ใช้ไปที่หน้า Profile
+			// ตรวจสอบข้อมูลการเข้าสู่ระบบ
+			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+			{
+				await DisplayAlert("Error", "Please enter both email and password", "OK");
+			}
+			else if (email == user.Email && password == user.Password)
+			{
+				// ถ้า login สำเร็จ ส่งข้อมูลผู้ใช้ไปยังหน้า ProfilePage
+				await Navigation.PushAsync(new ProfilePage(user));
 			}
 			else
 			{
-				// ถ้าล็อกอินล้มเหลว
-				await DisplayAlert("Login Failed", "Invalid email or password", "OK");
+				await DisplayAlert("Error", "Invalid email or password.", "OK");
 			}
 		}
 	}

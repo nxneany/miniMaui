@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MauiApp1.WithdrawCoursePage">
+        <StackLayout Padding="30">
+                <Label Text="Withdraw Course"
+                       FontSize="20"/>
+                <!-- List of Registered Courses -->
+                <Button Text="Withdraw Course 1"
+                        Clicked="OnWithdrawCourseClicked"/>
+                <Button Text="Withdraw Course 2"
+                        Clicked="OnWithdrawCourseClicked"/>
+        </StackLayout>
+</ContentPage>

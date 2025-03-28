@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MauiApp1.HistoryPage">
+    <StackLayout Padding="30">
+        <Label Text="Registration History"
+               FontSize="20"/>
+        <!-- List of previous courses -->
+        <Label Text="Term 1: Course 1, Course 2"/>
+        <Label Text="Term 2: Course 3, Course 4"/>
+    </StackLayout>
+</ContentPage>

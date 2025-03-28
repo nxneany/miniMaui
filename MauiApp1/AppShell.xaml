@@ -1,18 +1,26 @@
-<Shell
-    x:Class="MauiApp1.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiApp1"
-    xmlns:pages="clr-namespace:MauiApp1.Pages"
-    Shell.FlyoutBehavior="Flyout"
-    Title="MauiApp1">
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:local="clr-namespace:MauiApp1"
+       xmlns:pages="clr-namespace:MauiApp1.Pages"
+       xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+       xmlns:x1="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="MauiApp1.AppShell">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage"/>
+        <!-- หน้าแรก (MainPage) -->
+        <ShellContent Route="MainPage"
+                      Title="Home"
+                      ContentTemplate="{DataTemplate local:MainPage}">
+                <ShellContent.Content>
+                        <local:MainPage Shell.NavBarIsVisible="False"/>
+                </ShellContent.Content>
+        </ShellContent>
 
-    <ShellContent Title="Login"
-                  ContentTemplate="{DataTemplate pages:LoginPage}"/>
-    <!-- ใช้ pages:LoginPage -->
+        <!-- หน้าเข้าสู่ระบบ (LoginPage) -->
+        <ShellContent Title="Login"
+                      ContentTemplate="{DataTemplate pages:LoginPage}">
+                <ShellContent.Content>
+                        <pages:LoginPage Shell.NavBarIsVisible="False"/>
+                </ShellContent.Content>
+        </ShellContent>
+
 </Shell>

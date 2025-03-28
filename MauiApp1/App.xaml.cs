@@ -8,8 +8,7 @@ namespace MauiApp1
 		public App()
 		{
 			InitializeComponent();
-
-			MainPage = new NavigationPage(new LoginPage()); // ตั้งค่าเริ่มต้นเป็นหน้า LoginPage
+			MainPage = new NavigationPage(new LoginPage()); // ใช้ NavigationPage
 		}
 	}
 }

@@ -1,11 +1,10 @@
 using Microsoft.Maui.Controls;
 
-
 namespace MauiApp1
 {
-	public partial class CourseRegistrationPage : ContentPage
+	public partial class HistoryPage : ContentPage
 	{
-		public CourseRegistrationPage()
+		public HistoryPage()
 		{
 			InitializeComponent();
 		}

@@ -38,11 +38,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[D:/MauiApp1/MauiApp1/Pages/CurrentTermPage.xaml]
+[D:/MauiApp1/MauiApp1/Pages/CourseRegistrationPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Pages.CurrentTermPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\CurrentTermPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\CurrentTermPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Pages.CourseRegistrationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\CourseRegistrationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\CourseRegistrationPage.xaml
+
+[D:/MauiApp1/MauiApp1/Pages/History.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Pages.History.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\History.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\History.xaml
 
 [D:/MauiApp1/MauiApp1/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -55,6 +61,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Pages.ProfilePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\ProfilePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\ProfilePage.xaml
+
+[D:/MauiApp1/MauiApp1/Pages/WithdrawCoursePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Pages.WithdrawCoursePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\WithdrawCoursePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\WithdrawCoursePage.xaml
 
 [D:/MauiApp1/MauiApp1/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
